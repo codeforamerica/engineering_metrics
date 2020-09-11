@@ -8,11 +8,11 @@ class CircleCiClient
       'Circle-Token' => CIRCLE_CI_API_KEY
     }
 
-    # date_format = '%Y-%m-%d'
+    date_format = '%Y-%m-%d'
     query_params = {
       'branch': branch,
-      'start-date': start_date.to_s,
-      'end-date': end_date.to_s
+      'start-date': start_date.strftime(date_format),
+      'end-date': end_date.strftime(date_format)
     }
     query_param_string = query_params.map {|k,v| "#{k}=#{v}"}.join('&')
 
