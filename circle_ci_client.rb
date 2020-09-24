@@ -19,8 +19,7 @@ class CircleCiClient
     request_url = "https://circleci.com/api/v2/insights/#{project_slug}/workflows/#{workflow_name}?#{query_param_string}"
     response =  HTTParty.get request_url, headers: headers
     result = JSON.parse(response.body)
-    #TODO: filter out unsuccessful deploys?
-    deploys = result["items"]
+    deploys = result["items"].select {|i| i['status'] == 'success'}
     deploys.count if deploys
   end
 end
