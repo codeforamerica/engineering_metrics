@@ -21,7 +21,7 @@ def fetch_cmr(start_date, end_date)
 end
 
 def fetch_shiba(start_date, end_date)
-  GithubActionsClient.get_deploys(start_date, end_date, '2564543')
+  GithubActionsClient.get_deploys(start_date, end_date, '5322103')
 end
 
 unless ARGV.count == 1
