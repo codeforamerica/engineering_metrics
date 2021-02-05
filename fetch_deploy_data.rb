@@ -17,11 +17,13 @@ def fetch_gcf(start_date, end_date)
 end
 
 def fetch_cmr(start_date, end_date)
-  HerokuClient.get_deploys(start_date, end_date, 'intake-production', '62')
+  cmr_classic_deploys = HerokuClient.get_deploys(start_date, end_date, 'intake-production', '62')
+  cmr_il_deploys = GithubActionsClient.get_deploys(start_date, end_date, 'illinois_petition_service', '1473218', 'production')
+  cmr_classic_deploys + cmr_il_deploys
 end
 
 def fetch_shiba(start_date, end_date)
-  GithubActionsClient.get_deploys(start_date, end_date, '5322103')
+  GithubActionsClient.get_deploys(start_date, end_date, 'shiba', '5322103')
 end
 
 unless ARGV.count == 1
