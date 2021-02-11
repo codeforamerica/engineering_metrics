@@ -9,7 +9,7 @@ require_relative 'git_tags_reader'
 require_relative 'secrets'
 
 def fetch_gyr(start_date, end_date)
-  CircleCiClient.get_deploys(start_date, end_date, 'gh/codeforamerica/vita-min', 'deploy-release-branch-to-production', 'release')
+  CircleCiClient.get_deploys(start_date, end_date, 'gh/codeforamerica/vita-min', 'ci-and-deploy', 'release')
 end
 
 def fetch_gcf(start_date, end_date)
