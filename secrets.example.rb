@@ -1,0 +1,4 @@
+CIRCLE_CI_API_KEY = 'foo'
+GCF_REPO_PATH = 'bar'
+HEROKU_API_KEY = 'bla'
+GITHUB_TOKEN = 'bla'
