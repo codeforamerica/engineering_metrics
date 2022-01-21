@@ -1,6 +1,5 @@
 #! /usr/bin/env ruby
 
-require 'rest-client'
 require 'json'
 require_relative 'circle_ci_client'
 require_relative 'heroku_client'

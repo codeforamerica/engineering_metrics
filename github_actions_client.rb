@@ -1,3 +1,6 @@
+require 'httparty'
+require_relative 'secrets'
+
 class GithubActionsClient
   def self.get_deploys(start_date, end_date, repo_name, workflow_id, branch_name=nil)
     headers = {

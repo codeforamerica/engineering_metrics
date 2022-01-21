@@ -1,9 +1,7 @@
-require 'git'
-
 class GitTagsReader
   def self.get_deploys(start_date, end_date, repo_path, tag_prefix, tag_date_format)
     Dir.chdir(repo_path) do
-      system "git pull"
+      system "git pull --ff-only"
       deploy_tags = `git tag -l #{tag_prefix}*`
       deploy_dates = deploy_tags
                        .split("\n")
